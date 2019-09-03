@@ -30,13 +30,11 @@ _,contours, _ = cv2.findContours(thresh,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_NONE)
 
 image = cv2.drawContours(img,contours,-1,(0,0,255),2)
 
-"""if contours:
-	cv2.putText(img,"rice bleat detected", (30, 50),cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255), 2)"""
 for cnt in contours:
 	(x,y,w,h) = cv2.boundingRect(cnt)
 	cv2.rectangle(image,(x,y),(x+w,y+h),(200,45,67),2)
+cv2.putText(img,"rice bleat detected", (30, 50),cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255), 2)
 
-#ggg = cv2.drawContours(ggg,contours,-1,(11,222,13),3)
 
 
 cv2.imshow("pixels",green)
